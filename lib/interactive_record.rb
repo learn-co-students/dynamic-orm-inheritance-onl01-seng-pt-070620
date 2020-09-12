@@ -5,7 +5,7 @@ class InteractiveRecord
 
   def self.table_name
     self.to_s.downcase.pluralize
-  end
+  end            
 
   def self.column_names
     DB[:conn].results_as_hash = true
@@ -35,7 +35,7 @@ class InteractiveRecord
   def table_name_for_insert
     self.class.table_name
   end
-
+ 
   def values_for_insert
     values = []
     self.class.column_names.each do |col_name|
